@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Experience extends Model
 {
     use HasFactory;
+
+    protected $table = 'experiences';
+
+    protected $fillable = [
+        'name',
+        'location'
+    ];
 }
