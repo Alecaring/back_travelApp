@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Flight extends Model
 {
     use HasFactory;
+
+    protected $table = 'flights';
+
+    protected $fillable = [
+        'airlineName',
+        'sourceCity',
+        'destinationCity',
+        'departureTime',
+        'arrivalTime'
+    ];
 }
