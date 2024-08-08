@@ -12,7 +12,6 @@ class hotelsSeeder extends Seeder
      */
     public function run(): void
     {
-        // Dati di esempio per la tabella hotels
         $hotels = [
             [
                 'Name' => 'Hotel Paradise',
@@ -44,7 +43,6 @@ class hotelsSeeder extends Seeder
             ],
         ];
 
-        // Inserimento dei dati nella tabella hotels
         DB::table('hotels')->insert($hotels);
     }
 }
