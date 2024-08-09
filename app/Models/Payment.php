@@ -9,6 +9,10 @@ class Payment extends Model
 {
     use HasFactory;
 
+    public function bookings() {
+        return $this->belongsTo(Booking::class, 'BookingID', 'BookingID');
+    }
+
     protected $table = 'payments';
 
     protected $fillable = [

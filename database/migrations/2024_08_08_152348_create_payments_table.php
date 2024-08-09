@@ -18,7 +18,7 @@ return new class extends Migration
             $table->dateTime('PaymentDate')->nullable();
             $table->timestamps();
 
-            // $table->foreign('BookingID')->references('BookingID')->on('bookings')->onDelete('cascade');
+            $table->foreign('BookingID')->references('BookingID')->on('bookings')->onDelete('cascade');
         });
     }
 
