@@ -9,6 +9,10 @@ class Experience extends Model
 {
     use HasFactory;
 
+    public function bookings() {
+        return $this->hasMany(Booking::class, 'ExperienceId', 'ExperienceId');
+    }
+
     protected $table = 'experiences';
 
     protected $fillable = [
