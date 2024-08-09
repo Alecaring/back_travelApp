@@ -11,20 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bookings', function (Blueprint $table) {
-            $table->id('BookingID');
-            $table->unsignedBigInteger('UserID')->nullable();
-            $table->unsignedBigInteger('FlightID')->nullable();
-            $table->unsignedBigInteger('HotelID')->nullable();
-            $table->unsignedBigInteger('ExperienceID')->nullable();
-            $table->dateTimeTz('BookingDate')->nullable();
-            $table->timestamps();
+        // migration for bookings table
+Schema::create('bookings', function (Blueprint $table) {
+    $table->bigIncrements('BookingID');
+    $table->date('BookingDate');
+    $table->unsignedBigInteger('UserID');
+    $table->unsignedBigInteger('FlightID');
+    $table->unsignedBigInteger('HotelID');
+    $table->unsignedBigInteger('ExperienceID');
+    
+    $table->foreign('UserID')->references('UserId')->on('users')->onDelete('cascade');
+    $table->foreign('FlightID')->references('FlightId')->on('flights')->onDelete('cascade');
+    $table->foreign('HotelID')->references('HotelId')->on('hotels')->onDelete('cascade');
+    $table->foreign('ExperienceID')->references('ExperienceId')->on('experiences')->onDelete('cascade');
+    
+    $table->timestamps();
+});
 
-            $table->foreign('UserID')->references('UserID')->on('users')->onDelete('cascade');
-            $table->foreign('FlightID')->references('FlightID')->on('flights')->onDelete('cascade');
-            $table->foreign('HotelID')->references('HotelID')->on('hotels')->onDelete('cascade');
-            $table->foreign('ExperienceID')->references('ExperienceID')->on('experiences')->onDelete('cascade');
-        });
     }
 
     /**

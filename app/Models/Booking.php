@@ -28,5 +28,13 @@ class Booking extends Model
     public function hotel() {
         return $this->belongsTo(Hotel::class, 'HotelID', 'HotelID');
     }
+
+    protected $fillable = [
+        'BookingID',
+        'UserID',
+        'HotelID',
+        'ExperienceID',
+        'BookingDate',
+    ];
  
 }
