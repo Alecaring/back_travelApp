@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ExperienceController;
 use App\Http\Controllers\API\FlightController;
+use App\Http\Controllers\API\HotelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('experiences', ExperienceController::class);
 
 Route::apiResource('flights', FlightController::class);
+
+Route::apiResource('hotels', HotelController::class);
