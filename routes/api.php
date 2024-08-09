@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ExperienceController;
 use App\Http\Controllers\API\FlightController;
 use App\Http\Controllers\API\HotelController;
+use App\Http\Controllers\API\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,5 @@ Route::apiResource('experiences', ExperienceController::class);
 Route::apiResource('flights', FlightController::class);
 
 Route::apiResource('hotels', HotelController::class);
+
+Route::apiResource('payments', PaymentController::class);
