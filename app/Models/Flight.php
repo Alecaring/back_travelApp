@@ -13,6 +13,11 @@ class Flight extends Model
         return $this->hasMany(Booking::class, 'FlightID', 'FlightID');
     }
 
+    public function images() {
+        return $this->hasMany(FlightImage::class, 'FlightId', 'FlightId');
+    }
+    
+
     protected $table = 'flights';
 
     protected $fillable = [

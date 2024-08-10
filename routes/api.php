@@ -30,3 +30,4 @@ Route::apiResource('flights', FlightController::class);
 Route::apiResource('hotels', HotelController::class);
 
 Route::apiResource('payments', PaymentController::class);
+
