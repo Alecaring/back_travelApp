@@ -5,12 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -25,13 +21,11 @@
 
 <body>
     <div id="app">
-
-        <div class="header">
-
-            <nav>
-                nav
-            </nav>
-        </div>
+<div>
+    <nav class="nav">
+        ciao
+    </nav>
+</div>
 
         {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -45,7 +39,6 @@
                             </g>
                         </svg>
                     </div>
-                    
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -101,9 +94,6 @@
             @yield('content')
         </main>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
