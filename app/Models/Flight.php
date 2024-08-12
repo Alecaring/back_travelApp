@@ -18,6 +18,7 @@ class Flight extends Model
     }
     
 
+    protected $primaryKey = 'FlightId';
     protected $table = 'flights';
 
     protected $fillable = [

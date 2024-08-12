@@ -95,29 +95,29 @@ class FlightController extends Controller
         return response()->json(null, 204);
     }
 
-    /**
-     * Upload an image for a specified flight.
-     */
-    public function uploadImage(Request $request, $flightId)
-    {
-        // Validazione del file
-        $request->validate([
-            'image' => 'required|file|mimes:jpg,png|max:2048',
-        ]);
+    // /**
+    //  * Upload an image for a specified flight.
+    //  */
+    // public function uploadImage(Request $request, $flightId)
+    // {
+    //     // Validazione del file
+    //     $request->validate([
+    //         'image' => 'required|file|mimes:jpg,png|max:2048',
+    //     ]);
 
-        // Trova il volo
-        $flight = Flight::findOrFail($flightId);
+    //     // Trova il volo
+    //     $flight = Flight::findOrFail($flightId);
 
-        // Salvataggio del file
-        $path = $request->file('image')->store('public/flight_images');
+    //     // Salvataggio del file
+    //     $path = $request->file('image')->store('public/flight_images');
 
-        // Creazione di un nuovo record nella tabella `flight_images`
-        $flightImage = new FlightImage();
-        $flightImage->FlightId = $flight->FlightId;
-        $flightImage->imagePath = $path;
-        $flightImage->save();
+    //     // Creazione di un nuovo record nella tabella `flight_images`
+    //     $flightImage = new FlightImage();
+    //     $flightImage->FlightId = $flight->FlightId;
+    //     $flightImage->imagePath = $path;
+    //     $flightImage->save();
 
-        // Restituzione dell'URL del file caricato
-        return response()->json(['path' => Storage::url($path)]);
-    }
+    //     // Restituzione dell'URL del file caricato
+    //     return response()->json(['path' => Storage::url($path)]);
+    // }
 }
