@@ -3,8 +3,9 @@
 @section('content')
 <div class="container mt-4">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-8 ms_col_md8">
+            <img class="img" src="https://www.decioviaggi.com/img/box-viaggi.jpg" alt="">
+            <div class="containerUnderCol8">
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
