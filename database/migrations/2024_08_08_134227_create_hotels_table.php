@@ -18,7 +18,11 @@ return new class extends Migration
             $table->string('Address', 255)->nullable();
             $table->decimal('Latitude', 9, 6)->nullable();
             $table->decimal('Longitude', 9, 6)->nullable();
+            $table->string('CoverImage')->nullable();
+            $table->unsignedBigInteger('imagesHotelId')->nullable();
             $table->timestamps();
+
+            // $table->foreign('imagesHotelId')->references('imagesHotelId')->on('HotelsImages')->onDelete('cascade');
         });
     }
 
