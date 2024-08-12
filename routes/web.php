@@ -23,6 +23,15 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// routes/web.php
+use App\Http\Controllers\HotelController;
+
+Route::get('hotels/create', [HotelController::class, 'create'])->name('hotels.create');
+Route::post('hotels', [HotelController::class, 'store'])->name('hotels.store');
+Route::resource('hotels', HotelController::class);
+
+
+
 
 
 Route::middleware('auth')->group(function () {

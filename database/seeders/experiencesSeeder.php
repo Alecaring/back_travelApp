@@ -9,6 +9,8 @@ class ExperiencesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
     public function run(): void
     {
@@ -33,8 +35,29 @@ class ExperiencesSeeder extends Seeder
                 'name' => 'Culinary Workshop',
                 'location' => 'Bologna, Italy',
             ],
+            [
+                'name' => 'Scuba Diving',
+                'location' => 'Great Barrier Reef, Australia',
+            ],
+            [
+                'name' => 'Hot Air Balloon Ride',
+                'location' => 'Capadocia, Turkey',
+            ],
+            [
+                'name' => 'Mountain Hiking',
+                'location' => 'Swiss Alps, Switzerland',
+            ],
+            [
+                'name' => 'River Rafting',
+                'location' => 'Colorado River, USA',
+            ],
+            [
+                'name' => 'Historical City Tour',
+                'location' => 'Rome, Italy',
+            ],
         ];
 
+        // Inserisci i dati nella tabella
         DB::table('experiences')->insert($experiences);
     }
 }

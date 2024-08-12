@@ -9,10 +9,6 @@ class Hotel extends Model
 {
     use HasFactory;
 
-    public function bookings() {
-        return $this->hasMany(Booking::class, 'HotelID', 'HotelID');
-    }
-
     protected $table = 'hotels';
 
     protected $fillable = [
@@ -21,5 +17,11 @@ class Hotel extends Model
         'Address',
         'Latitude',
         'Longitude',
+        'CoverImage'
     ];
+
+    public function images()
+    {
+        return $this->hasMany(HotelImage::class, 'imagesHotelId', 'HotelID');
+    }
 }
