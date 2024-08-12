@@ -18,7 +18,10 @@
                 <tr>
                     <th>Name</th>
                     <th>City</th>
-                    <th>Actions</th>
+                    <th>Address</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>CoverImage</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,9 +29,13 @@
                     <tr>
                         <td>{{ $hotel->Name }}</td>
                         <td>{{ $hotel->City }}</td>
-                        <td>
+                        <td>{{ $hotel->Address }}</td>
+                        <td>{{ $hotel->Latitude }}</td>
+                        <td>{{ $hotel->Longitude }}</td>
+                        <td>{{ $hotel->CoverImage }}</td>
+                        {{-- <td>
                         <img src="{{ asset('storage/' . $hotel->CoverImage) }}" alt="nooooooooooo">
-                        </td>
+                        </td> --}}
                         
                             {{-- <a href="{{ route('hotels.show', ['hotel' => $hotel->id]) }}" class="btn btn-info">View</a>
                             <a href="{{ route('hotels.edit', ['hotel' => $hotel->id]) }}" class="btn btn-warning">Edit</a> --}}
