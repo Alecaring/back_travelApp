@@ -4,22 +4,21 @@
     <div class="container-fluid ms_vhHeaderContainerTop p-0 ">
         <div class="ms_vhHeaderContainer">
             <div class="col-md-8 ms_col_md8">
-                <img class="img" src="https://www.decioviaggi.com/img/box-viaggi.jpg" alt="">
-                <div class="containerUnderCol8">
+                <img class="img w-100" src="https://www.decioviaggi.com/img/box-viaggi.jpg" alt="">
+                <div class="containerUnderCol8 p-3">
 
 
-                    <div class="d-flex fs-1 mb-5 gap-4 fw-bold">
+                    <div
+                        class="d-flex flex-column flex-md-row justify-content-center align-items-center fs-1 mb-5 gap-4 fw-bold">
                         {{-- <div class="ms_btIc card-header me-3">{{ __('LOGIN') }}</div> --}}
                         @if (Route::has('login'))
-                            <a class="ms_btIc card-header me-3 text-decoration-none"
-                                href="{{ route('login') }}">
+                            <a class="ms_btIc card-header me-3 text-decoration-none" href="{{ route('login') }}">
                                 {{ __('LOGIN') }}
                             </a>
                         @endif
                         {{-- <div class="ms_btIc2 card-header">{{ __('REGISTER') }}</div> --}}
                         @if (Route::has('register'))
-                            <a class="ms_btIc2 card-header text-decoration-none"
-                                href="{{ route('register') }}">
+                            <a class="ms_btIc2 card-header text-decoration-none" href="{{ route('register') }}">
                                 {{ __('REGISTER') }}
                             </a>
                         @endif
@@ -84,7 +83,7 @@
                             </div>
 
                             <div class="mb-4 row mb-0">
-                                <div class="col-md-8 offset-md-4">
+                                <div class="col-8">
                                     <button type="submit" class="btn btn-primary w-100">
                                         {{ __('Login') }}
                                     </button>
