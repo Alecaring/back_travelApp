@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('location', 255)->nullable(); // Luogo dove si svolge l'esperienza
             $table->text('description')->nullable(); // Descrizione dettagliata dell'esperienza
             $table->decimal('price', 8, 2)->nullable(); // Prezzo dell'esperienza
-            $table->unsignedInteger('duration')->nullable(); // Durata dell'esperienza in minuti
+            $table->string('duration', 255)->nullable();
             $table->string('category', 50)->nullable(); // Categoria dell'esperienza, come "Avventura", "Culturale", ecc.
             $table->boolean('is_active')->default(true); // Stato dell'esperienza (attiva/inattiva)
             $table->string('cover_image')->nullable(); // Immagine di copertura dell'esperienza

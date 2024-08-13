@@ -11,6 +11,11 @@ class Hotel extends Model
 
     protected $table = 'hotels';
 
+    protected $primaryKey = 'HotelID'; // Assicurati che questo sia il nome corretto
+    public $incrementing = false; // Se la chiave primaria non è auto-incrementale
+    protected $keyType = 'string'; // Cambia se il tipo di chiave primaria è diverso
+
+
     protected $fillable = [
         'Name',
         'City',

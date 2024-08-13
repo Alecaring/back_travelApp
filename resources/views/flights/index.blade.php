@@ -4,67 +4,56 @@
 
 @section('content')
     <div class="container">
-        <h1>Flights</h1>
+        <h1 class="my-4">Flights</h1>
+        <a href="{{ route('flights.create') }}" class="btn btn-primary mb-4">Create New Flight</a>
 
         @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
+            <div class="alert alert-success">{{ session('success') }}</div>
         @endif
 
-        <a href="{{ route('flights.create') }}" class="btn btn-primary mb-3">Create New Flight</a>
-
         @if($flights->count())
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Airline Name</th>
-                        <th>Source City</th>
-                        <th>Destination City</th>
-                        <th>Departure Time</th>
-                        <th>Arrival Time</th>
-                        <th>Latitude Source</th>
-                        <th>Longitude Source</th>
-                        <th>Latitude Destination</th>
-                        <th>Longitude Destination</th>
-                        <th>In Time</th>
-                        <th>Cover Image</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($flights as $flight)
-                        <tr>
-                            <td>{{ $flight->airlineName }}</td>
-                            <td>{{ $flight->sourceCity }}</td>
-                            <td>{{ $flight->destinationCity }}</td>
-                            <td>{{ $flight->departureTime }}</td>
-                            <td>{{ $flight->arrivalTime }}</td>
-                            <td>{{ $flight->LatitudeSource }}</td>
-                            <td>{{ $flight->LongitudeSource }}</td>
-                            <td>{{ $flight->LatitudeDest }}</td>
-                            <td>{{ $flight->LongitudeDest }}</td>
-                            <td>{{ $flight->InTime ? 'Yes' : 'No' }}</td>
-                            <td>
-                                @if($flight->CoverImage)
-                                    <img src="{{ asset('storage/' . $flight->CoverImage) }}" alt="Cover Image" style="width: 100px; height: auto;">
-                                @else
-                                    No Image
-                                @endif
-                            </td>
-                            <td>
-                                <a href="{{ route('flights.show', $flight->FlightId) }}" class="btn btn-info btn-sm">View</a>
-                                <a href="{{ route('flights.edit', $flight->FlightId) }}" class="btn btn-warning btn-sm">Edit</a>
-                                <form action="{{ route('flights.destroy', $flight->FlightId) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            <div class="row">
+                @foreach($flights as $flight)
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            @if($flight->CoverImage)
+                                <img src="{{ asset('storage/' . $flight->CoverImage) }}" class="card-img-top" alt="Cover Image" style="height: 200px; object-fit: cover;">
+                            @else
+                                <div class="card-img-top d-flex justify-content-center align-items-center" style="height: 200px; background-color: #f8f9fa;">
+                                    <span class="text-muted">No Image</span>
+                                </div>
+                            @endif
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $flight->airlineName }}
+                                {{-- @if($flight->airlineName === 'Ryanair')
+                                        <img src="{{ asset('images/ryanair-logo.png') }}" alt="Ryanair Logo" style="width: 100px; height: auto;" class="d-inline-block ml-2">
+                                    @endif --}}
+                                </h5>
+                                <p class="card-text">
+                                    <strong>Source City:</strong> {{ $flight->sourceCity }}<br>
+                                    <strong>Destination City:</strong> {{ $flight->destinationCity }}<br>
+                                    <strong>Departure Time:</strong> {{ $flight->departureTime }}<br>
+                                    <strong>Arrival Time:</strong> {{ $flight->arrivalTime }}<br>
+                                    <strong>Latitude Source:</strong> {{ $flight->LatitudeSource }}<br>
+                                    <strong>Longitude Source:</strong> {{ $flight->LongitudeSource }}<br>
+                                    <strong>Latitude Destination:</strong> {{ $flight->LatitudeDest }}<br>
+                                    <strong>Longitude Destination:</strong> {{ $flight->LongitudeDest }}<br>
+                                    <strong>In Time:</strong> {{ $flight->InTime ? 'Yes' : 'No' }}
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="{{ route('flights.show', $flight->FlightId) }}" class="btn btn-info btn-sm">View</a>
+                                    <a href="{{ route('flights.edit', $flight->FlightId) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <form action="{{ route('flights.destroy', $flight->FlightId) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         @else
             <p>No flights available.</p>
         @endif

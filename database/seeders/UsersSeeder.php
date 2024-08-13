@@ -14,7 +14,7 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->deleteelImages(); // Usa truncate() per resettare anche l'auto-incremento
+        DB::table('users')->delete(); // Usa truncate() per resettare anche l'auto-incremento
 
         DB::table('users')->insert([
             ['email' => 'john@example.com', 'name' => 'John Doe', 'password' => bcrypt('password')],

@@ -13,7 +13,7 @@ class FlightsSeeder extends Seeder
     public function run(): void
     {
         // Svuota la tabella prima di inserire i dati
-        DB::table('flights')->truncate(); // Truncate per preservare le chiavi primarie auto-incrementali
+        DB::table('flights')->delete(); // Truncate per preservare le chiavi primarie auto-incrementali
 
         // Inserisci i dati nella tabella
         DB::table('flights')->insert([
