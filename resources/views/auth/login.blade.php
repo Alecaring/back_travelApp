@@ -29,14 +29,14 @@
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
-                            <div class="mb-4 row position-relative">
+                            <div class="mb-4 row position-relative justify-content-center">
                                 <label for="email" class="col-md-4 col-form-label text-md-right ms_lable">
                                     <span>
                                         {{ __('E-Mail Address') }} *
                                     </span>
                                 </label>
 
-                                <div class="col-md-6">
+                                <div class="col-8">
                                     <input id="email" type="email"
                                         class="ms_input form-control @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -49,14 +49,14 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row position-relative">
+                            <div class="mb-4 row position-relative justify-content-center">
                                 <label for="password" class="col-md-4 col-form-label text-md-right ms_lable">
                                     <span>
                                         {{ __('Password') }} *
                                     </span>
                                 </label>
 
-                                <div class="col-md-6">
+                                <div class="col-8">
                                     <input id="password" type="password"
                                         class="ms_input form-control @error('password') is-invalid @enderror"
                                         name="password" required autocomplete="current-password">
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row">
+                            <div class="mb-4 d-flex justify-content-center">
                                 <div class="col-md-6 offset-md-4">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember"
@@ -82,7 +82,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row mb-0">
+                            <div class="mb-4 row justify-content-center">
                                 <div class="col-8">
                                     <button type="submit" class="btn btn-primary w-100">
                                         {{ __('Login') }}
