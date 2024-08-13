@@ -16,8 +16,15 @@ return new class extends Migration
             $table->string('airlineName', 100)->nullable();
             $table->string('sourceCity', 50)->nullable();
             $table->string('destinationCity', 50);
+            $table->decimal('LatitudeSource', 9, 6)->nullable();
+            $table->decimal('LongitudeSource', 9, 6)->nullable();
+            $table->decimal('LatitudeDest', 9, 6)->nullable();
+            $table->decimal('LongitudeDest', 9, 6)->nullable();
+            $table->boolean('InTime')->default(true)->nullable();
             $table->dateTimeTz('departureTime')->nullable();
             $table->dateTimeTz('arrivalTime')->nullable();
+            $table->string('CoverImage')->nullable();
+
             $table->timestamps();
         });
     }

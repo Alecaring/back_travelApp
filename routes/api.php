@@ -31,3 +31,8 @@ Route::apiResource('hotels', HotelController::class);
 
 Route::apiResource('payments', PaymentController::class);
 
+Route::get('/hotels', [HotelController::class, 'index']);
+Route::post('/hotels', [HotelController::class, 'store']);
+Route::get('/hotels/{id}', [HotelController::class, 'show']);
+Route::put('/hotels/{id}', [HotelController::class, 'update']);
+Route::delete('/hotels/{id}', [HotelController::class, 'destroy']);

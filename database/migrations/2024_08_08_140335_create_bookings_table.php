@@ -11,23 +11,37 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // migration for bookings table
-Schema::create('bookings', function (Blueprint $table) {
-    $table->bigIncrements('BookingID');
-    $table->date('BookingDate');
-    $table->unsignedBigInteger('UserID');
-    $table->unsignedBigInteger('FlightID');
-    $table->unsignedBigInteger('HotelID');
-    $table->unsignedBigInteger('ExperienceID');
-    
-    $table->foreign('UserID')->references('UserId')->on('users')->onDelete('cascade');
-    $table->foreign('FlightID')->references('FlightId')->on('flights')->onDelete('cascade');
-    $table->foreign('HotelID')->references('HotelId')->on('hotels')->onDelete('cascade');
-    $table->foreign('ExperienceID')->references('ExperienceId')->on('experiences')->onDelete('cascade');
-    
-    $table->timestamps();
-});
+        Schema::create('bookings', function (Blueprint $table) {
+            $table->bigIncrements('BookingID');
+            $table->date('BookingDate');
+            $table->unsignedBigInteger('UserID');
+            $table->unsignedBigInteger('FlightID')->nullable();
+            $table->unsignedBigInteger('HotelID')->nullable();
+            $table->unsignedBigInteger('ExperienceID')->nullable();
 
+            $table->string('status')->default('pending'); // Stato della prenotazione
+            $table->decimal('total_amount', 10, 2)->nullable(); // Importo totale della prenotazione
+            $table->string('payment_method')->nullable(); // Metodo di pagamento
+            $table->string('payment_status')->default('unpaid'); // Stato del pagamento
+
+            // Aggiungi colonne specifiche per hotel
+            $table->date('check_in_date')->nullable(); // Data di check-in
+            $table->date('check_out_date')->nullable(); // Data di check-out
+            $table->integer('number_of_guests')->nullable(); // Numero di ospiti
+
+            // Definisci le chiavi esterne
+            $table->foreign('UserID')->references('UserId')->on('users')->onDelete('cascade');
+            $table->foreign('FlightID')->references('FlightId')->on('flights')->onDelete('set null');
+            $table->foreign('HotelID')->references('HotelId')->on('hotels')->onDelete('set null');
+            $table->foreign('ExperienceID')->references('ExperienceId')->on('experiences')->onDelete('set null');
+
+            // Aggiungi indici per le colonne utilizzate nelle query
+            $table->index('BookingDate');
+            $table->index('UserID');
+            $table->index('FlightID');
+            
+            $table->timestamps();
+        });
     }
 
     /**
