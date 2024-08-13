@@ -13,9 +13,15 @@ return new class extends Migration
     {
         Schema::create('experiences', function (Blueprint $table) {
             $table->id('ExperienceId');
-            $table->string('name', 100)->nullable();
-            $table->string('location', 255)->nullable();
-            $table->timestamps();
+            $table->string('name', 100)->nullable(); // Nome dell'esperienza
+            $table->string('location', 255)->nullable(); // Luogo dove si svolge l'esperienza
+            $table->text('description')->nullable(); // Descrizione dettagliata dell'esperienza
+            $table->decimal('price', 8, 2)->nullable(); // Prezzo dell'esperienza
+            $table->string('duration', 255)->nullable();
+            $table->string('category', 50)->nullable(); // Categoria dell'esperienza, come "Avventura", "Culturale", ecc.
+            $table->boolean('is_active')->default(true); // Stato dell'esperienza (attiva/inattiva)
+            $table->string('cover_image')->nullable(); // Immagine di copertura dell'esperienza
+            $table->timestamps(); // Timestamp di creazione e aggiornamento
         });
     }
 

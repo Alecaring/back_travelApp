@@ -9,11 +9,12 @@ class Hotel extends Model
 {
     use HasFactory;
 
-    public function bookings() {
-        return $this->hasMany(Booking::class, 'HotelID', 'HotelID');
-    }
-
     protected $table = 'hotels';
+
+    protected $primaryKey = 'HotelID'; // Assicurati che questo sia il nome corretto
+    public $incrementing = false; // Se la chiave primaria non è auto-incrementale
+    protected $keyType = 'string'; // Cambia se il tipo di chiave primaria è diverso
+
 
     protected $fillable = [
         'Name',
@@ -21,5 +22,11 @@ class Hotel extends Model
         'Address',
         'Latitude',
         'Longitude',
+        'CoverImage'
     ];
+
+    public function images()
+    {
+        return $this->hasMany(HotelImage::class, 'imagesHotelId', 'HotelID');
+    }
 }

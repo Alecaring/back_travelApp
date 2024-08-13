@@ -3,6 +3,7 @@ import "~resources/scss/app.scss";
 import.meta.glob(["../img/**"]);
 import * as bootstrap from "bootstrap";
 
+
 // function validate() {
 //     var email = document.getElementById("email");
 //     var password = document.getElementById("password");
@@ -59,4 +60,5 @@ document.addEventListener('DOMContentLoaded', function () {
     // var form = document.querySelector('form');
     // form.addEventListener('submit', validate);
 });
+
 

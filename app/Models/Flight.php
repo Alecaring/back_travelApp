@@ -12,11 +12,11 @@ class Flight extends Model
     public function bookings() {
         return $this->hasMany(Booking::class, 'FlightID', 'FlightID');
     }
-
-    public function images() {
-        return $this->hasMany(FlightImage::class, 'FlightId', 'FlightId');
-    }
     
+    public function images()
+    {
+        return $this->hasMany(FlightImage::class, 'flight_id', 'FlightId');
+    }
 
     protected $primaryKey = 'FlightId';
     protected $table = 'flights';
@@ -25,6 +25,12 @@ class Flight extends Model
         'airlineName',
         'sourceCity',
         'destinationCity',
+        'LatitudeSource',
+        'LongitudeSource',
+        'LatitudeDest',
+        'LongitudeDest',
+        'InTime',
+        'CoverImage',
         'departureTime',
         'arrivalTime'
     ];
