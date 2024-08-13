@@ -19,7 +19,7 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<body>
+<body style="overflow: hidden;">
     <div id="app">
 <div>
     <nav class="nav">
@@ -89,6 +89,8 @@
                 </div>
             </div>
         </nav> --}}
+
+        <div id="error-message"></div>
 
         <main class="">
             @yield('content')
