@@ -90,6 +90,8 @@
             </div>
         </nav> --}}
 
+        <div id="error-message"></div>
+
         <main class="">
             @yield('content')
         </main>
