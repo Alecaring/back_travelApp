@@ -6,7 +6,7 @@
         <div class="col-md-8 ms_col_md8">
             <img class="img w-100" src="https://www.decioviaggi.com/img/box-viaggi.jpg" alt="">
             <div class="containerUnderCol8 p-3">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header text-center mb-5">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

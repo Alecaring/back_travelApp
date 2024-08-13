@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         errorMessage.classList.add("alert", "alert-danger");
     }
 
-    var form = document.querySelector('form');
-    form.addEventListener('submit', validate);
+    // var form = document.querySelector('form');
+    // form.addEventListener('submit', validate);
 });
 

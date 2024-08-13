@@ -83,8 +83,8 @@
                             </div>
 
                             <div class="mb-4 row justify-content-center">
-                                <div class="col-8">
-                                    <button type="submit" class="btn btn-primary w-100">
+                                <div class="col-8 d-flex flex-column align-items-center">
+                                    <button type="submit" class="btn btn-primary w-50">
                                         {{ __('Login') }}
                                     </button>
 
