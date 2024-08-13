@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\ExperienceImageController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +31,15 @@ use App\Http\Controllers\HotelController;
 Route::get('hotels/create', [HotelController::class, 'create'])->name('hotels.create');
 Route::post('hotels', [HotelController::class, 'store'])->name('hotels.store');
 Route::resource('hotels', HotelController::class);
+Route::resource('flights', FlightController::class);
+Route::resource('experiences', ExperienceController::class);
+Route::post('/experience-images', [ExperienceImageController::class, 'store'])->name('experience_images.store');
+Route::delete('/experience-images/{id}', [ExperienceImageController::class, 'destroy'])->name('experience_images.destroy');
+
+// Route::resource('experience_images', ExperienceImageController::class)->only([
+//     'store', 'update', 'destroy'
+// ]);
+
 
 
 
