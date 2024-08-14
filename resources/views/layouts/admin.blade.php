@@ -26,9 +26,9 @@
 <body>
     <div id="app">
 
-        <header class="navbar navbar-dark sticky-top bg-white flex-md-nowrap p-2 shadow">
+        <header class="navbar navbar-dark sticky-top bg-white flex-md-nowrap p-2 shadow text-white">
             <div class="row justify-content-between">
-                <a class="navbar-brand text-dark col-md-3 col-lg-2 me-0 px-3" href="/">Travel App</a>
+                <a class="navbar-brand text-white col-md-3 col-lg-2 me-0 px-3" href="/">Travel App</a>
                 <button class="navbar-toggler position-absolute lh-base hamburger-menu" type="button" id="sidebarToggle">
                     <i class="fa-solid fa-bars-staggered text-dark"></i>
                 </button>
@@ -55,7 +55,7 @@
             </div>
             <div class="navbar-nav">
                 <div class="nav-item text-nowrap ms-2">
-                    <a class="nav-link text-dark" href="{{ route('logout') }}"
+                    <a class="nav-link text-white" href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
