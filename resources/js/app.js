@@ -62,3 +62,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.getElementById('sidebarMenu');
+
+    sidebarToggle.addEventListener('click', function() {
+        sidebar.classList.toggle('show');
+        this.classList.toggle('collapsed');
+    });
+});
