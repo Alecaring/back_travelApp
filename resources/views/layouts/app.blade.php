@@ -19,12 +19,10 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<body style="overflow: hidden;">
+<body>
     <div id="app">
 <div>
-    <nav class="nav">
-        ciao
-    </nav>
+   
 </div>
 
         {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -90,7 +88,7 @@
             </div>
         </nav> --}}
 
-        <div id="error-message"></div>
+        
 
         <main class="">
             @yield('content')

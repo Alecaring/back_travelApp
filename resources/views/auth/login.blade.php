@@ -30,42 +30,52 @@
                             @csrf
 
                             <div class="mb-4 row position-relative justify-content-center">
-                                <label for="email" class="col-md-4 col-form-label text-md-right ms_lable">
+                                <label for="logEmail" class="col-md-4 col-form-label text-md-right ms_lable">
                                     <span>
                                         {{ __('E-Mail Address') }} *
                                     </span>
                                 </label>
 
                                 <div class="col-8">
-                                    <input id="email" type="email"
+                                    <input id="logEmail" type="email"
                                         class="ms_input form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                        value="{{ old('email') }}" autocomplete="email" autofocus>
+                                        <p id="validEmailLog"></p>
 
-                                    @error('email')
+
+                                    {{-- @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
-                                    @enderror
+                                    @enderror --}}
                                 </div>
                             </div>
 
                             <div class="mb-4 row position-relative justify-content-center">
-                                <label for="password" class="col-md-4 col-form-label text-md-right ms_lable">
+                                <label for="logPassword" class="col-md-4 col-form-label text-md-right ms_lable">
                                     <span>
                                         {{ __('Password') }} *
                                     </span>
                                 </label>
 
                                 <div class="col-8">
-                                    <input id="password" type="password"
+                                    <input id="logPassword" type="password"
                                         class="ms_input form-control @error('password') is-invalid @enderror"
                                         name="password" required autocomplete="current-password">
 
-                                    @error('password')
+                                    {{-- @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
-                                    @enderror
+                                    @enderror --}}
+                                    {{-- <div>
+                                        <ul>
+                                            <li id="pLenght">Lunghezza Password: 8</li>
+                                            <li id="pCharM">Alemeno una Maiuscola</li>
+                                            <li id="pNum">Numeri</li>
+                                            <li id="pCharSpecial">Caratteri Speciali</li>
+                                        </ul>
+                                    </div> --}}
                                 </div>
                             </div>
 

@@ -11,22 +11,28 @@ nav {
     background: #4162aec3;
 
 }
+.form-control {
+    color: rgba(128, 128, 128, 0.454) !important;
+}
 
 .ms_vhHeaderContainerTop {
-    height: 93vh;
+    height: 100vh;
     object-fit: cover;
-    margin-top: 7vh;
     background-color: rgba(255, 0, 0, 0.237);
 
 
 }
+.ms_letter_input {
+    font-weight: 400;
+    letter-spacing: 1px;
+}
 
 .ms_vhHeaderContainer {
-    height: 93vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     background-size: cover;
-    background: #009dff8f;
+    background: #54d3ecb0;
     color: white;
     // overflow: hidden;
 
@@ -44,6 +50,8 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    overflow: auto;
+
 
     .img {
         position: absolute;
@@ -57,21 +65,29 @@ nav {
     }
 
     .containerUnderCol8 {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
-        margin-top: 10%;
         
+.ms_log_container_txt {
+    display: flex;
+    gap: 2rem;
+    font-size: 2rem;
+    padding: 3rem 1rem 1rem;
+}
 
         .ms_btIc {
             border-bottom: 5px solid #0d6dfdd8;
         }
+
         .ms_btIc2 {
             color: rgba(255, 255, 255, 0.405);
 
         }
     }
 }
-
+.feedback {
+    font-size: .9rem;
+}
 
 #error-message {
     // color: red;
@@ -83,10 +99,33 @@ nav {
 }
 
 
+.ms_btnCont {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
 
+}
 
+.genBtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    button {
+        width: 100%;
+    }
+}
+.fiBtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
 
+    button {
+        width: 100%;
+    }
 
+}
 
 
 
@@ -99,12 +138,14 @@ nav {
     height: 7vh;
 
 }
+
 .ms_input {
-    
+
     height: 8vh;
     border-radius: 2rem;
     padding: 0 1.5rem;
 }
+
 .ms_lable {
     width: 60%;
     position: absolute;
@@ -118,5 +159,24 @@ nav {
     align-items: flex-start;
     justify-content: flex-start;
     font-size: .7rem;
+
+}
+
+.ms_fs_li_register {
+    font-size: .9rem;
+}
+
+.list-group-item {
+    color: white;
+}
+
+.ms_stilebotton {
     
+
+    button {
+        
+        .div {
+            
+        }
+    }
 }
