@@ -179,10 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // ---------------------------------
 
 
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
     const logEmailElem = document.getElementById('logEmail');

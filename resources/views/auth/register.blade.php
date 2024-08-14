@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid ms_vhHeaderContainerTop p-0 ">
         <div class="ms_vhHeaderContainer">
-            <div class="col-md-8 ms_col_md8">
+            <div class=" ms_col_md8 px-md-5">
                 <img class="img w-100" src="https://www.decioviaggi.com/img/box-viaggi.jpg" alt="">
                 <div class="containerUnderCol8 p-3">
                     <div class="ms_log_container_txt">
@@ -15,11 +15,11 @@
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 
-                            <div class=" row">
+                            <div class="">
                                 <label for="name"
-                                    class="ms_letter_input col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                    class="ms_letter_input col-form-label text-md-right">{{ __('Name') }}</label>
 
-                                <div class="col-md-6">
+                                <div class="">
                                     <input id="nameReg" type="text" autocomplete="off"
                                         class="form-control @error('name') is-invalid @enderror" name="name"
                                         value="{{ old('name') }}" autofocus>
@@ -30,11 +30,11 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="">
                                 <label for="email"
                                     class="ms_letter_input col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-                                <div class="col-md-6 ">
+                                <div class="">
                                     <input id="emailReg" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" autocomplete="off">
@@ -42,11 +42,11 @@
                                 </div>
                             </div>
 
-                            <div class=" row">
+                            <div class="">
                                 <label for="regPassword"
                                     class="ms_letter_input col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                                <div class="col-md-6">
+                                <div class="">
                                     <input id="regPassword" type="password" class="form-control" name="password"
                                     autocomplete="off">
 
@@ -66,11 +66,11 @@
                                 </div>
                             </div>
 
-                            <div class=" row">
+                            <div class="">
                                 <label for="password-confirm"
                                     class="ms_letter_input col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
-                                <div class="col-md-6">
+                                <div class="">
                                     <input id="password-confirm" type="password" class="form-control"
                                         name="password_confirmation" required autocomplete="off">
                                 </div>
@@ -81,13 +81,13 @@
                             </div>
 
                             <div class="mt-5 row mb-0 ms_btnCont">
-                                <div id="button-container" class="genBtn div col-md-6 offset-md-4 ">
+                                <div id="button-container" class="genBtn div offset-md-4 ">
                                     <button id="submitButton" type="submit" class=" btn btn-primary">
                                         {{ __('Register') }}
                                     </button>
                                     
                                 </div>
-                                <div id="layerButton" class="fiBtn div col-md-6 offset-md-4 ms_stilebotton">
+                                <div id="layerButton" class="fiBtn div offset-md-4 ms_stilebotton">
                                     <button class="btn btn-primary">
                                         Register
                                     </button>

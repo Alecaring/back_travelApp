@@ -11,15 +11,19 @@ nav {
     background: #4162aec3;
 
 }
+
 .form-control {
     color: rgba(128, 128, 128, 0.454) !important;
 }
+
 a {
     text-decoration: none;
 }
+
 .ms_margin {
     margin-top: 4rem;
 }
+
 .ms_vhHeaderContainerTop {
     height: 100vh;
     object-fit: cover;
@@ -27,6 +31,7 @@ a {
 
 
 }
+
 .ms_letter_input {
     font-weight: 400;
     letter-spacing: 1px;
@@ -51,7 +56,6 @@ a {
     position: relative;
     padding: 0;
     margin: 0;
-    background: url('') no-repeat center;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -72,14 +76,14 @@ a {
     .containerUnderCol8 {
         width: 100%;
         margin: 0 auto;
-        
-        
-.ms_log_container_txt {
-    display: flex;
-    gap: 2rem;
-    font-size: 2rem;
-    padding: 3rem 1rem 1rem;
-}
+
+
+        .ms_log_container_txt {
+            display: flex;
+            gap: 2rem;
+            font-size: 2rem;
+            padding: 3rem 1rem 1rem;
+        }
 
         .ms_btIc {
             border-bottom: 5px solid #0d6dfdd8;
@@ -91,6 +95,7 @@ a {
         }
     }
 }
+
 .feedback {
     font-size: .9rem;
 }
@@ -109,15 +114,18 @@ a {
 
 }
 
+
 .genBtn {
     position: absolute;
     top: 0;
     left: 0;
     margin: 0 auto;
+
     button {
         width: 100%;
     }
 }
+
 .fiBtn {
     position: absolute;
     top: 0;
@@ -144,7 +152,7 @@ nav {
 
 .ms_input {
 
-    padding:1 1.5rem;
+    padding: 1 1.5rem;
 }
 
 
@@ -158,12 +166,43 @@ nav {
 }
 
 .ms_stilebotton {
-    
+
 
     button {
-        
-        .div {
-            
+
+        .div {}
+    }
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .ms_btnCont {
+
+        width: 50%;
+    }
+
+    
+
+}
+@media (min-width: 1024px) {
+
+    .ms_btnCont {
+
+        width: 50%;
+    }
+
+    .ms_vhHeaderContainerTop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .ms_vhHeaderContainer {
+            width: 50vw;
+            height: 90vh;
+
         }
     }
+
 }
