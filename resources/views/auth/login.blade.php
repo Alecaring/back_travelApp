@@ -4,99 +4,69 @@
     <div class="container-fluid ms_vhHeaderContainerTop p-0 ">
         <div class="ms_vhHeaderContainer">
             <div class="col-md-8 ms_col_md8">
-                <img class="img w-100" src="https://www.decioviaggi.com/img/box-viaggi.jpg" alt="">
+                <img class="img w-100" src="https://www.decioviaggi.com/img/box-viaggi.jpg" alt="Travel Image">
                 <div class="containerUnderCol8 p-3">
 
-
-                    <div
-                        class="d-flex flex-column flex-md-row justify-content-center align-items-center fs-1 mb-5 gap-4 fw-bold">
-                        {{-- <div class="ms_btIc card-header me-3">{{ __('LOGIN') }}</div> --}}
-                        @if (Route::has('login'))
-                            <a class="ms_btIc card-header me-3 text-decoration-none" href="{{ route('login') }}">
-                                {{ __('LOGIN') }}
-                            </a>
-                        @endif
-                        {{-- <div class="ms_btIc2 card-header">{{ __('REGISTER') }}</div> --}}
-                        @if (Route::has('register'))
-                            <a class="ms_btIc2 card-header text-decoration-none" href="{{ route('register') }}">
-                                {{ __('REGISTER') }}
-                            </a>
-                        @endif
+                    <div class="ms_log_container_txt">
+                        <a href="{{ route('login') }}" class="card-header text-center text-primary">{{ __('Log in') }}</a>
+                        <a href="{{ route('register') }}" class="card-header text-center ">{{ __('Register') }}</a>
                     </div>
 
-
-                    <div class="card-body">
+                    <div class="card-body ms_margin">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
-                            <div class="mb-4 row position-relative justify-content-center">
-                                <label for="logEmail" class="col-md-4 col-form-label text-md-right ms_lable">
-                                    <span>
-                                        {{ __('E-Mail Address') }} *
-                                    </span>
+                            <div class="mb-4 row justify-content-center">
+                                <label for="logEmail" class="ms_letter_input col-md-4 col-form-label text-md-right ms_lable">
+                                    {{ __('E-Mail Address') }} *
                                 </label>
 
-                                <div class="col-8">
+                                <div class="">
                                     <input id="logEmail" type="email"
-                                        class="ms_input form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" autocomplete="email" autofocus>
-                                        <p id="validEmailLog"></p>
-
-
-                                    {{-- @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror --}}
+                                        class="ms_input form-control @error('email') is-invalid @enderror"
+                                        name="email" value="{{ old('email') }}" autocomplete="email" autofocus required>
+                                    <p id="emailValid" class="feedback"></p>
+                                    <p id="feedbackEmailLog"></p>
                                 </div>
                             </div>
 
-                            <div class="mb-4 row position-relative justify-content-center">
-                                <label for="logPassword" class="col-md-4 col-form-label text-md-right ms_lable">
-                                    <span>
-                                        {{ __('Password') }} *
-                                    </span>
+                            <div class="mb-4 row justify-content-center">
+                                <label for="logPassword" class="ms_letter_input col-md-4 col-form-label text-md-right ms_lable">
+                                    {{ __('Password') }} *
                                 </label>
 
-                                <div class="col-8">
+                                <div class="">
                                     <input id="logPassword" type="password"
                                         class="ms_input form-control @error('password') is-invalid @enderror"
                                         name="password" required autocomplete="current-password">
+                                    <p id="passwordValid" class="feedback"></p>
+                                    <span class="feedback" id="feedbackPasslLog"></span>
 
-                                    {{-- @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror --}}
-                                    {{-- <div>
-                                        <ul>
-                                            <li id="pLenght">Lunghezza Password: 8</li>
-                                            <li id="pCharM">Alemeno una Maiuscola</li>
-                                            <li id="pNum">Numeri</li>
-                                            <li id="pCharSpecial">Caratteri Speciali</li>
-                                        </ul>
-                                    </div> --}}
                                 </div>
                             </div>
 
-                            <div class="mb-4 d-flex justify-content-center">
+                            <div class="d-flex justify-content-center">
                                 <div class="col-md-6 offset-md-4">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember"
                                             {{ old('remember') ? 'checked' : '' }}>
-
-                                        <label class="form-check-label " for="remember">
+                                        <label class="form-check-label" for="remember">
                                             {{ __('Remember Me') }}
                                         </label>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="mb-4 row justify-content-center">
-                                <div class="col-8 d-flex flex-column align-items-center">
-                                    <button type="submit" class="btn btn-primary w-50">
-                                        {{ __('Login') }}
-                                    </button>
+                            <div class=" row justify-content-center w-100 align-items-center m-auto">
+                                <div class="col-8 d-flex flex-column align-items-center w-100 justify-content-center p-0">
+                                    <div class="mt-4 row mb-4 ms_btnCont">
+                                        <button id="submitButton" type="submit" class="genBtn btn btn-primary w-100">
+                                            {{ __('Login') }}
+                                        </button>
+                                        <button id="layerButton" type="button" class="fiBtn btn btn-primary w-100">
+                                            {{ __('Login') }}
+                                        </button>
+                                    </div>
 
                                     @if (Route::has('password.request'))
                                         <a class="btn btn-link w-100 text-center mt-4 text-decoration-none text-white"

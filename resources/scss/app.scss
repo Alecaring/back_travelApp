@@ -14,7 +14,12 @@ nav {
 .form-control {
     color: rgba(128, 128, 128, 0.454) !important;
 }
-
+a {
+    text-decoration: none;
+}
+.ms_margin {
+    margin-top: 4rem;
+}
 .ms_vhHeaderContainerTop {
     height: 100vh;
     object-fit: cover;
@@ -68,6 +73,7 @@ nav {
         width: 100%;
         margin: 0 auto;
         
+        
 .ms_log_container_txt {
     display: flex;
     gap: 2rem;
@@ -89,10 +95,7 @@ nav {
     font-size: .9rem;
 }
 
-#error-message {
-    // color: red;
-    margin-top: 100px;
-}
+
 
 .form-check {
     padding-left: 2.5rem;
@@ -141,26 +144,10 @@ nav {
 
 .ms_input {
 
-    height: 8vh;
-    border-radius: 2rem;
-    padding: 0 1.5rem;
+    padding:1 1.5rem;
 }
 
-.ms_lable {
-    width: 60%;
-    position: absolute;
-    top: 0%;
-    height: 7vh;
-    left: 30%;
-    transform: translate(0%, 0%);
-    color: gray;
-    z-index: 10000;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    font-size: .7rem;
 
-}
 
 .ms_fs_li_register {
     font-size: .9rem;

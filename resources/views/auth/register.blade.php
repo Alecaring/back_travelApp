@@ -8,7 +8,7 @@
                 <div class="containerUnderCol8 p-3">
                     <div class="ms_log_container_txt">
                         <a href="{{ route('login') }}" class="card-header text-center ">{{ __('Log in') }}</a>
-                        <a href="{{ route('register') }}" class="card-header text-center ">{{ __('Register') }}</a>
+                        <a href="{{ route('register') }}" class="text-primary card-header text-center ">{{ __('Register') }}</a>
                     </div>
 
                     <div class="card-body">
@@ -34,17 +34,11 @@
                                 <label for="email"
                                     class="ms_letter_input col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 ">
                                     <input id="emailReg" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" autocomplete="off">
                                         <p id="emailFeedback" class="feedback"></p>
-
-                                    {{-- @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror --}}
                                 </div>
                             </div>
 

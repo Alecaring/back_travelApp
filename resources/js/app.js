@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameElem = document.getElementById('nameReg'); // Elemento input nome
     const nameFeedbackElem = document.getElementById('nameFeedback'); // Feedback per il nome
     const errorMessageElem = document.getElementById('errorMessages'); // Elemento per mostrare messaggi di errore
-    
+
 
     const validateName = () => {
         const nameValue = nameElem.value;
@@ -175,12 +175,100 @@ document.addEventListener('DOMContentLoaded', () => {
         validateForm();
     });
 
-    // Gestisci l'invio del form al server
-    // submitButtonElem.addEventListener('click', (e) => {
-    //     e.preventDefault();
-    //     console.log('Invio del form al server...');
-    //     // Invia il form al server usando AJAX o fetch
-    //     // Qui puoi implementare l'invio del form con fetch o altra tecnica
-    // });
+});
+// ---------------------------------
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const logEmailElem = document.getElementById('logEmail');
+    const logPasswordElem = document.getElementById('logPassword');
+    const emailValidElem = document.getElementById('emailValid');
+    const passwordValidElem = document.getElementById('passwordValid');
+    const layerButtonElem = document.getElementById('layerButton'); // Bottone da nascondere
+    const submitButtonElem = document.getElementById('submitButton'); // Bottone per inviare il form
+    const feedbackEmailLogElem = document.getElementById('feedbackEmailLog');
+    const feedbackPasslLogElem = document.getElementById('feedbackPasslLog');
+
+    const validateLogin = () => {
+        const emailValue = logEmailElem.value;
+        const passwordValue = logPasswordElem.value;
+
+        // Validazione email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const isEmailValid = emailRegex.test(emailValue);
+        removeTextColor(emailValidElem);
+        checkColortxt(isEmailValid, emailValidElem);
+        if (!isEmailValid) {
+            feedbackEmailLogElem.textContent = "email errata";
+            feedbackEmailLogElem.classList.remove('text-success')
+            feedbackEmailLogElem.classList.add('text-danger');
+            logEmailElem.classList.remove('is-valid');
+            logEmailElem.classList.add('is-invalid');
+
+        } else {
+            feedbackEmailLogElem.textContent = "email corretta";
+            feedbackEmailLogElem.classList.remove('text-danger');
+            feedbackEmailLogElem.classList.add('text-success')
+            logEmailElem.classList.add('is-valid');
+            logEmailElem.classList.remove('is-invalid');
+
+
+        }
+
+        // Validazione password
+        const minLength = 8;
+        const isPasswordValid = passwordValue.length >= minLength;
+        removeTextColor(passwordValidElem);
+        checkColortxt(isPasswordValid, passwordValidElem);
+
+        
+
+            if (!isPasswordValid) {
+                feedbackPasslLogElem.textContent = "password errata";
+                feedbackPasslLogElem.classList.remove('text-success')
+                feedbackPasslLogElem.classList.add('text-danger');
+                logPasswordElem.classList.remove('is-valid');
+                logPasswordElem.classList.add('is-invalid');
+            } else {
+                feedbackPasslLogElem.textContent = "password corretta";
+                feedbackPasslLogElem.classList.remove('text-danger');
+                feedbackPasslLogElem.classList.add('text-success')
+                logPasswordElem.classList.add('is-valid');
+                logPasswordElem.classList.remove('is-invalid');
+            }
+        
+
+        // Controllo combinato
+
+        if (isEmailValid && isPasswordValid) {
+            // Nascondi il bottone layer e abilita il bottone di submit
+            layerButtonElem.style.display = 'none';
+            submitButtonElem.style.display = 'block';
+            console.log('Email e password validi.');
+        } else {
+            // Mostra nuovamente il bottone layer se la validazione fallisce
+            layerButtonElem.style.display = 'block';
+            submitButtonElem.style.display = 'none';
+            console.log('Email o password non validi.');
+        }
+
+
+    };
+
+    if (logEmailElem && logPasswordElem) {
+        logEmailElem.addEventListener('input', validateLogin);
+        logPasswordElem.addEventListener('input', validateLogin);
+    }
+
+    layerButtonElem.addEventListener('click', (e) => {
+        e.preventDefault();
+        validateLogin();
+    });
 
 });
+
